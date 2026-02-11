@@ -1,5 +1,5 @@
 // ================= GLOBAL CONFIG =================
-const API = "https://smart-task-scheduler-lp72.onrender.com/";
+const API = "https://smart-task-scheduler-lp72.onrender.com";
 let undoStack = [];
 let redoStack = [];
 
@@ -139,4 +139,5 @@ function logout() {
 // Initializing based on page
 window.onload = () => {
     if (window.location.pathname.includes("dashboard")) loadTasks();
+
 };
