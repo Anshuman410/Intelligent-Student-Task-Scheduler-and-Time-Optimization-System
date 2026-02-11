@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Task Manager Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        @keyframes slow-slide {
+            0% { transform: scale(1.1) translateX(0); }
+            100% { transform: scale(1.2) translateX(-20px); }
+        }
+        .animate-bg-slide {
+            animation: slow-slide 25s infinite alternate ease-in-out;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 overflow-hidden font-sans">
+
+    <div class="relative min-h-screen flex items-center justify-center p-4">
+        
+        <div class="absolute inset-0 z-0 bg-cover bg-center animate-bg-slide"
+             style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1600');">
+        </div>
+        
+        <div class="absolute inset-0 bg-emerald-950/80 z-10 backdrop-blur-[2px]"></div>
+
+        <div class="relative z-20 glass-panel p-10 rounded-[2.5rem] shadow-2xl max-w-md w-full border border-white/10">
+            
+            <header class="text-center mb-10">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full mb-6 shadow-lg shadow-emerald-500/20">
+                    <i class="fa-solid fa-user-plus text-2xl text-white"></i>
+                </div>
+                <h2 class="text-4xl font-bold text-white tracking-tighter">Join the Pro.</h2>
+                <p class="text-emerald-200/60 text-sm mt-3 font-medium">Create your student optimization profile</p>
+            </header>
+
+            <form id="registerForm" onsubmit="event.preventDefault(); doRegister();" class="space-y-6">
+                <div>
+                    <input type="text" id="ruser" 
+                           class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-emerald-100/30 focus:ring-2 focus:ring-emerald-400 focus:bg-white/10 outline-none transition-all" 
+                           placeholder="Username" required>
+                </div>
+
+                <div>
+                    <input type="password" id="rpass" 
+                           class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-emerald-100/30 focus:ring-2 focus:ring-emerald-400 focus:bg-white/10 outline-none transition-all" 
+                           placeholder="Password" required>
+                </div>
+
+                <button type="submit" 
+                        class="w-full bg-emerald-500 text-slate-950 py-4 rounded-2xl font-black text-lg hover:bg-white hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-2xl shadow-emerald-500/20">
+                    CREATE ACCOUNT
+                </button>
+            </form>
+
+            <footer class="text-center mt-10 pt-6 border-t border-white/5">
+                <p class="text-slate-400 text-sm">
+                    Already have an account? 
+                    <a href="login.html" class="text-emerald-400 hover:text-white font-bold transition">Sign In</a>
+                </p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
